@@ -25,24 +25,41 @@ $admission = $_POST['admission'];
         <h1>Profile</h1>
     </div>
     <h1>Your information</h1>
-    <label>Hi:</label>
-    <span><?php echo $name; ?></span><br/>
-    <label>Class:</label>
-    <span><?php echo $class; ?></span><br/>
-    <label>University:</label>
-    <span><?php echo $university; ?></span><br/>
-    <label>Curriculum</label>
-    <span><?php echo $curriculum; ?></span><br/>
-    <label>Admission</label>
-    <span><?php echo $admission; ?></span><br/>
-    <label>Date of Birth:</label>
-    <span><?php echo $dateofbirth; ?></span><br/>
-    <label>Country:</label>
-    <span><?php echo $country; ?></span><br/>
-    <label>Now address:</label>
-    <span><?php echo $nowaddress; ?></span><br/>
-    <label>Hobby:</label>
-    <span>
+    <div class="row">
+        <label class="col-25">Hi:</label>
+        <span class="col-75"><?php echo $name; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Class:</label>
+        <span class="col-75"><?php echo $class; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">University:</label>
+        <span class="col-75"><?php echo $university; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Curriculum</label>
+        <span class="col-75"><?php echo $curriculum; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Admission</label>
+        <span> class="col-75" <?php echo $admission; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Date of Birth:</label>
+        <span class="col-75"><?php echo $dateofbirth; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Country:</label>
+        <span class="col-75"><?php echo $country; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Now address:</label>
+        <span class="col-75"><?php echo $nowaddress; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Hobby:</label>
+        <span class="col-75">
             <?php
             echo '<br>';
             for ($i = 1; $i <= 5; $i = $i + 1)
@@ -52,8 +69,11 @@ $admission = $_POST['admission'];
                 }
             ?>
         </span><br/>
-    <label>About yourself:</label>
-    <span><?php echo $aboutyourself; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">About yourself:</label>
+        <span class="col-75"><?php echo $aboutyourself; ?></span><br/>
+    </div>
 </div>
 
 </body>
