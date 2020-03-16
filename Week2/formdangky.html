@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="author" content="">
+    
+    <title>From</title>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+<body >
+    <div class="container" style="margin: 0px 240px 0px 270px">
+        <div class="center">
+            <h1>Profile</h1>
+        </div>
+        <from  method="post" action="" id="form">
+            <div class="row">
+                <label class="col-25" for="name">Name</label>
+                <input class="col-75" type="text" name="name" placeholder="Enter Full Name"/>
+            </div>
+            <br>
+            <div class= "row">
+                <label class="col-25" for="email">Email</label>
+                <input class="col-75" type="text" name="email" placeholder="Email Address"/>   
+            </div>
+            <br>
+            <div class= "row">
+                <label style="width: 15%;" for="sex">Gender</label>
+                <input  type="radio" name="sex"/>Male
+                <input  type="radio" name="sex"/>Female
+                <br>
+            </div>
+            <div class="row">
+                <label class="col-25" for="dateOB">Date of Birth</label>
+                <input class="col-75" type="date" name="dateOB"/>
+            </div>
+            <br>
+            <div class="row">
+                <label class="col-25" for="country">Country</label>
+                <select name="jobs" class="col-75" size="1" id="jobs">
+                    <option value="hs-sv">Việt Nam</option>
+                    <option value="GV">Trung Quốc</option>
+                    <option value="GV">Italy</option>
+                </select>
+            </div>
+            <br>
+            <div class="row">
+                <label class="col-25" for="address">Address</label>
+                <input class="col-75" type="text" name="address" placeholder="Now address"/>
+            </div>
+            <br>
+            <div class="row">
+                <label class="col-25" for="university">University</label>
+                <input class="col-75" type="text" name="university" placeholder="Your University"/>
+            </div>
+            <br>
+            <div class="row">
+                <label class="col-25" for="notes">Note</label>
+                <textarea class="col-75" name="hoten" cols="40" rows="8"></textarea>
+            </div>
+            <br>
+            <div class="row, col-75">
+                <input type="submit" value="Submit" id="button">
+            </div>
+        </from>
+    </div>
+</body>
