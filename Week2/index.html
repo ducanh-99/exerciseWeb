@@ -15,60 +15,62 @@
     <form action="CV.php" method="post">
         <div id="data">
             <div class="row">
-                <label class="col-25" >Name</label>
-                <input class="col-75"  type="text" name="name"/><br/>
+                <label class="col-25" >Name:</label>
+                <input class="col-75"  type="text" name="name" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Class</label>
-                <input class="col-75"  type="text" name="class"/><br/>
+                <label class="col-25" >Email:</label>
+                <input class="col-75"  type="email" name="email" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >University</label>
-                <input class="col-75"  type="text" name="university"/><br/>
+                <label class="col-25" >Class:</label>
+                <input class="col-75"  type="text" name="class" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Admission</label>
-                <input class="col-75"  type="number" name="admission"/><br/>
+                <label class="col-25" >University:</label>
+                <input class="col-75"  type="text" name="university" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Curriculum</label>
-                <input class="col-75"  type="text" name="curriculum"/><br/>
+                <label class="col-25" >Admission:</label>
+                <input class="col-75"  type="number" name="admission" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Date of Birth</label>
-                <input class="col-75"  type="date" name="dateofbirth"/><br/>
+                <label class="col-25" >Curriculum:</label>
+                <input class="col-75"  type="text" name="curriculum" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Country</label>
-                <input class="col-75"  type="text" name="country"/><br/>
+                <label class="col-25" >Date of Birth:</label>
+                <input class="col-75"  type="date" name="dateofbirth" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Now address</label>
-                <input class="col-75" type="text" name="nowaddress"/><br/>
+                <label class="col-25" >Country:</label>
+                <input class="col-75"  type="text" name="country" required/><br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >Hobby</label>
-                <div class="col-75">
-                    <br>
-                    <input type="checkbox" name="hobby1" value="Gaming">Gaming<br>
-                    <input type="checkbox" name="hobby2" value="Reading books">Reading books<br>
-                    <input type="checkbox" name="hobby3" value="Watching TV">Watching TV<br>
-                    <input type="checkbox" name="hobby4" value="Soccer">Soccer<br>
-                    <input type="checkbox" name="hobby5" value="Coding">Coding<br>
-                 </div>
+                <label class="col-25" >Now address:</label>
+                <input class="col-75" type="text" name="nowaddress" required/><br/>
+            </div>
+            <br>
+            <div class="row">
+                <label class="col-25" >Hobby:</label>
+                <input type="checkbox" name="hobby1" value="Gaming">Gaming
+                <input type="checkbox" name="hobby2" value="Reading books">Reading books
+                <input type="checkbox" name="hobby3" value="Watching TV">Watching TV
+                <input type="checkbox" name="hobby4" value="Soccer">Soccer
+                <input type="checkbox" name="hobby5" value="Coding">Coding
                 <br/>
             </div>
             <br>
             <div class="row">
-                <label class="col-25" >About yourself</label>
+                <label class="col-25" >About yourself:</label>
                 <br/>
                 <textarea rows="6" cols="60" placeholder="About yourself" name="aboutyourself"></textarea>
             </div>

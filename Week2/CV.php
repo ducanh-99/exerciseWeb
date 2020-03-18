@@ -1,5 +1,6 @@
 <?php
 $name = $_POST['name'];
+$email = $_POST['email'];
 $class = $_POST['class'];
 $university = $_POST['university'];
 $dateofbirth = $_POST['dateofbirth'];
@@ -28,6 +29,10 @@ $admission = $_POST['admission'];
     <div class="row">
         <label class="col-25">Hi:</label>
         <span class="col-18"><?php echo $name; ?></span><br/>
+    </div>
+    <div class="row">
+        <label class="col-25">Email:</label>
+        <span class="col-18"><?php echo $email; ?></span><br/>
     </div>
     <div class="row">
         <label class="col-25">Class:</label>
