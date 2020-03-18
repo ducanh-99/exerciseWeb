@@ -45,10 +45,12 @@ input[type=submit]{
   border-radius: 4px;
   cursor: pointer;
   float: left;
+  width: 100px;
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
+  width: 100px;
 }
 
 .container {
@@ -60,13 +62,13 @@ input[type=submit]:hover {
 
 .col-25 {
   float: left;
-  width: 15%;
+  width: 25%;
   margin-top: 6px;
 }
 
 .col-75 {
   float: left;
-  width: 50%;
+  width: 75%;
   margin-top: 6px;
 }
 .col-18{

@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="container" style="margin: 0px 240px 0px 270px">
+<div class="container" style="margin: 0px 270px 0px 270px">
     <div class="center">
         <h1>Profile</h1>
     </div>
@@ -61,12 +61,14 @@
             <br>
             <div class="row">
                 <label class="col-25" >Hobby:</label>
-                <input type="checkbox" name="hobby1" value="Gaming">Gaming
-                <input type="checkbox" name="hobby2" value="Reading books">Reading books
-                <input type="checkbox" name="hobby3" value="Watching TV">Watching TV
-                <input type="checkbox" name="hobby4" value="Soccer">Soccer
-                <input type="checkbox" name="hobby5" value="Coding">Coding
-                <br/>
+                <div class="col-75">
+                    <input type="checkbox" name="hobby1" value="Gaming">Gaming<br>
+                    <input type="checkbox" name="hobby2" value="Reading books">Reading books<br>
+                    <input type="checkbox" name="hobby3" value="Watching TV">Watching TV<br>
+                    <input type="checkbox" name="hobby4" value="Soccer">Soccer<br>
+                    <input type="checkbox" name="hobby5" value="Coding">Coding
+                    <br/>
+                </div>
             </div>
             <br>
             <div class="row">
@@ -78,8 +80,8 @@
         </div>
 
         <div id="buttons">
-            <label>&nbsp;</label>
-            <input type="submit" value="submit"/><br/>
+            <label class="col-25"></label>
+            <input class="col-25" type="submit" value="Submit"/><br/>
         </div>
     </form>
 </div>
