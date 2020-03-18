@@ -19,8 +19,9 @@
     color: #58257b;
     font-size: 25px;
   }
-  input[type =checkbox]{
-
+  input[type=checkbox]{
+    width: 8%;
+    padding: 8px;
   }
 
   input[type=date]{
@@ -45,6 +46,14 @@
     border-radius: 4px;
     cursor: pointer;
     float: left;
+  }
+  
+  input[type=number]{
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
   }
   
   input[type=submit]:hover {
