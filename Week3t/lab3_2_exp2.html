@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function display1(birthday) {
+            if (birthday.length == 0) {
+                document.getElementById("person1").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("person1").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "lab3_2_exp2_person1.php?birth1=" + birthday, true);
+                xmlhttp.send();
+            }
+        }
+
+        function display2(birthday) {
+            if (birthday.length == 0) {
+                document.getElementById("person2").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("person2").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "lab3_2_exp2_person2.php?birth2=" + birthday, true);
+                xmlhttp.send();
+            }
+        }
+
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type='text/javascript'></script>
+
+    <script language="javascript">
+        $(document).ready(function () {
+            $("#calculate").click(function () {
+                var birthday1 = $("#birthday1").val();
+                var birthday2 = $("#birthday2").val();
+                var yearGap = Math.abs(parseInt(birthday1) - parseInt(birthday2));
+                $("#yearGap").val("Years gap between person 1 and person 2 are "+yearGap+" years");
+                var dayGap = Math.abs(new Date(birthday1) - new Date(birthday2))/86400000;
+                $("#dayGap").val("Days gap between birthday 1 and birthday 2 are "+dayGap+" days");
+            });
+        });
+    </script>
+</head>
+<body>
+<form>
+    Person 1: <input type="text" id="name1">
+</form>
+<br>
+<form>
+    Birthday 1: <input type="date" id="birthday1" onkeyup="display1(this.value)">
+</form>
+<br>
+<br>
+<form>
+    Person 2: <input type="text" id="name2">
+</form>
+<br>
+<form>
+    Birthday 2: <input type="date" id="birthday2" onkeyup="display2(this.value)">
+</form>
+
+<p>Person 1: <span id="person1"></span></p>
+<p>Person 2: <span id="person2"></span></p>
+
+
+<button id="calculate" type="button">calculate</button>
+<br>
+<input type="text" id="yearGap" size="52" readonly>
+<br>
+<input type="text" id="dayGap" size="53" readonly>
+</body>
+</html>

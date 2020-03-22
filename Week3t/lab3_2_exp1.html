@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function DegToRad(deg) {
+            if (deg.length == 0) {
+                document.getElementById("D2R").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("D2R").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "lab3_2_exp1_d2r.php?d2r=" + deg, true);
+                xmlhttp.send();
+            }
+        }
+
+        function RadToDeg(rad) {
+            if (rad.length == 0) {
+                document.getElementById("R2D").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("R2D").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "lab3_2_exp1_r2d.php?r2d=" + rad, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    Input Deg: <input type="number" onkeyup="DegToRad(this.value)">
+</form>
+<p>Deg to Rad: <span id="D2R"></span></p>
+<br>
+<form>
+    Input Rad: <input type="number" onkeyup="RadToDeg(this.value)">
+</form>
+<p>Rad to Deg: <span id="R2D"></span></p>
+</body>
+</html>
