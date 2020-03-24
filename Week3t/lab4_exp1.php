@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
 
+
+<form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET" >
+        <input  type = number name="n">
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <br>
