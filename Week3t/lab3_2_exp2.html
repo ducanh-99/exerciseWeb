@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link type="text/css" rel="stylesheet" href="style2.css"/>
     <script>
         function display1(birthday) {
             if (birthday.length == 0) {
@@ -53,55 +52,31 @@
     </script>
 </head>
 <body>
-    <div class="container" style="margin: 0px 400px 0px 400px">
-        <div class="center">
-            <h1>DATETIME</h1>
-        </div>
-        <form>
-            <div class="row">
-                <label class="col-25">Person 1</label>
-                <input class="col-75" type="text" id="name1">
-            </div>
-        </form>
-        <form>
-            <div class="row">
-                <label class="col-25">Birthday 1</label>
-                <input class="col-75" type="date" id="birthday1" onkeyup="display1(this.value)">
-            </div>
-        </form>
-        <br>
- 
-        <form>
-            <div class="row">
-                <label class="col-25">Person 2</label>
-                <input class="col-75" type="text" id="name2">
-            </div>
-        </form>
+<form>
+    Person 1: <input type="text" id="name1">
+</form>
+<br>
+<form>
+    Birthday 1: <input type="date" id="birthday1" onkeyup="display1(this.value)">
+</form>
+<br>
+<br>
+<form>
+    Person 2: <input type="text" id="name2">
+</form>
+<br>
+<form>
+    Birthday 2: <input type="date" id="birthday2" onkeyup="display2(this.value)">
+</form>
 
-        <form>
-            <div class="row">
-                <label class="col-25">Birthday 2</label>
-                <input class="col-75" type="date" id="birthday2" onkeyup="display2(this.value)">
-            </div>
-        </form>
-            <div class="row">
-                <label class="col-25">Person 1</label>
-                <span class="col-75" id="person1"></span>
-            </div>
-            <div class="row">
-                <label class="col-25">Person 2</label>
-                <span class="col-75" id="person2"></span>
-            </div>
+<p>Person 1: <span id="person1"></span></p>
+<p>Person 2: <span id="person2"></span></p>
 
-        <div class="row">
-            <label class="col-25"></label>
-            <button class="col-75" id="calculate" type="button">Calculate</button>
-        </div>
-        <br>
-        <hr>
-        <input type="text" style="width: 100%;" id="yearGap" size="52" readonly>
-        <br>
-        <input type="text" style="width: 100%;"  id="dayGap" size="53" readonly>
-    </div>
+
+<button id="calculate" type="button">calculate</button>
+<br>
+<input type="text" id="yearGap" size="52" readonly>
+<br>
+<input type="text" id="dayGap" size="53" readonly>
 </body>
 </html>
