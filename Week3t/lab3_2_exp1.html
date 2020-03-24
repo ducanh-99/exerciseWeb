@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link type="text/css" rel="stylesheet" href="style1.css"/>
     <script>
         function DegToRad(deg) {
             if (deg.length == 0) {
@@ -36,14 +37,32 @@
     </script>
 </head>
 <body>
-<form>
-    Input Deg: <input type="number" onkeyup="DegToRad(this.value)">
-</form>
-<p>Deg to Rad: <span id="D2R"></span></p>
-<br>
-<form>
-    Input Rad: <input type="number" onkeyup="RadToDeg(this.value)">
-</form>
-<p>Rad to Deg: <span id="R2D"></span></p>
+    <div class="container" style="margin: 0px 400px 0px 400px">
+        <div class="center">
+            <h1>Deg/Rad</h1>
+        </div>
+        <form>
+            <div class="row">
+                <label class="col-25">  Input Deg</label>
+                <input class="col-75" type="number" onkeyup="DegToRad(this.value)">
+            </div>
+        </form>
+            <div class="row">
+                <label class="col-25">Deg to Rad:</label>
+                <span  class="col-75" id="D2R"></span>
+            </div>
+        <br>
+        <hr>
+        <form>
+            <div class="row">
+                <label class="col-25">  Input Rad</label>
+                <input class="col-75" type="number" onkeyup="RadToDeg(this.value)">
+            </div>
+        </form>
+        <div class="row">
+            <label class="col-25">Rad to Deg:</label>
+            <span  class="col-75" id="R2D"></span>
+        </div>
+    </div>
 </body>
 </html>
