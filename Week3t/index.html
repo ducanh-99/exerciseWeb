@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest(); //Tạo HTTP request đến server trong JavaScript
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        /*
+                        Thuộc tính readyState định nghĩa trạng thái hiện tại của đối tượng XMLHttpRequest.
+                            0: Requet chưa được khởi tạo
+
+                            1: Request đã được thiết lập
+
+                            2: Request đã được gửi
+
+                            3: Request đang được xử lý
+
+                            4: Kết thúc Request
+                         */
+                        document.getElementById("txtHint").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("GET", "gethint.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+<body>
+
+<p><b>Start typing a name in the input field below:</b></p>
+<form>
+    First name: <input type="text" onkeyup="showHint(this.value)">  <!--mỗi khi xuất hiện chữ thì lại gọi hàm showHint(truyền vào nội dung)-->
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+</body>
+</html>
