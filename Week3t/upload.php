@@ -1,5 +1,5 @@
 <?php
-$max = 7;
+$max = $_POST['n1'];
 $target_file = array(); //chứa đường dẫn
 $imageFileType = array();   //trả về đuôi của tệp tin trên hệ thống
 $target_file_RG = array();  //chứa đường dẫn thu gọn
