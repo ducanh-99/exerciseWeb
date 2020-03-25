@@ -23,20 +23,20 @@ for ($i = 0; $i < $max; $i++) {
 }
 ?>
 <html>
-    <head>
-        <link type="text/css" rel="stylesheet" href="style3.css"/>
-    </head>
-    <body>
-    <div class="container" style="margin: 0px 200px 0px 200px">
-        <div class="center">
-            <h1>Upload file</h1>
-        </div>
+<head>
+    <link type="text/css" rel="stylesheet" href="style3.css"/>
+</head>
+<body>
+<div class="container" style="margin: 0px 200px 0px 200px">
+    <div class="center">
+        <h1>Upload file</h1>
+    </div>
     <div style="padding-left: 20%;">
         <?php
         //upload thất bại
         if ($uploadOk == 0) {
             exit('Sorry, your file was not uploaded."."<br>"');
-        // if everything is ok, try to upload file
+            // if everything is ok, try to upload file
         } else for ($i = 0; $i < $max; $i++) {
             if (move_uploaded_file($_FILES["fileToUpload" . $i]["tmp_name"], $target_file[$i])) {
                 echo "The file " . basename($_FILES["fileToUpload" . "$i"]["name"]) . " has been uploaded." . "<br>";
@@ -46,7 +46,7 @@ for ($i = 0; $i < $max; $i++) {
         }
         ?>
 
-       
+
         <?php
         for ($i = 0; $i < $max; $i++) {
             if ($imageFileType[$i] == "jpg" || $imageFileType[$i] == "png" || $imageFileType[$i] == "jpeg" || $imageFileType[$i] == "gif")
@@ -59,56 +59,101 @@ for ($i = 0; $i < $max; $i++) {
         }
         ?>
     </div>
-        <hr>
-        <div class="center">
-            <h1>Sắp xếp theo tên</h1>
-        </div>
-        <?php
-        //xử lý sắp xêp tệp tin
-        //sắp xếp theo tên
-        $f = array();
-        $g = array();
-        for ($i = 0; $i < $max; $i++) $f[$i] = basename($_FILES["fileToUpload" . $i]["name"]);
-        for ($i = 0; $i < $max; $i++) $g[$i] = $i;
-        for ($i = 0; $i < $max; $i++) {
-            for ($j = $i + 1; $j < $max; $j++) {
-                if ($f[$i] > $f[$j]) {
-                    $tg = $f[$i];
-                    $f[$i] = $f[$j];
-                    $f[$j] = $tg;
+    <hr>
+    <div class="center">
+        <h1>Sort by name</h1>
+    </div>
+    <?php
+    //xử lý sắp xêp tệp tin
+    //sắp xếp theo tên
+    $f = array();
+    $g = array();
+    for ($i = 0; $i < $max; $i++) $f[$i] = basename($_FILES["fileToUpload" . $i]["name"]);
+    for ($i = 0; $i < $max; $i++) $g[$i] = $i;
+    for ($i = 0; $i < $max; $i++) {
+        for ($j = $i + 1; $j < $max; $j++) {
+            if ($f[$i] > $f[$j]) {
+                $tg = $f[$i];
+                $f[$i] = $f[$j];
+                $f[$j] = $tg;
 
-                    $tg = $g[$i];
-                    $g[$i] = $g[$j];
-                    $g[$j] = $tg;
-                }
+                $tg = $g[$i];
+                $g[$i] = $g[$j];
+                $g[$j] = $tg;
             }
         }
-        ?>
-        <table border="1">
-            <tr>
-                <td style="width:15%; text-align: center;">Name</td> 
-                <td style="width:20%; text-align: center;">Type</td>
-                <td style="width:15%; text-align: center;">Size</td>
-                <td style="width:15%; text-align: center;">Tmp_type</td>
-                <td style="width:15%; text-align: center;">Last modified</td>
-                <td style="width:100px; text-align: center;">image</td>
+    }
+
+    $f1 = array();
+    $g1 = array();
+    for ($i = 0; $i < $max; $i++) $f1[$i] = date("F d Y H:i:s.",filemtime("uploadLab4/".basename($_FILES["fileToUpload" . $i]["name"])));
+    for ($i = 0; $i < $max; $i++) $g1[$i] = $i;
+    for ($i = 0; $i < $max; $i++) {
+        for ($j = $i + 1; $j < $max; $j++) {
+            if ($f1[$i] > $f1[$j]) {
+                $tg = $f1[$i];
+                $f1[$i] = $f1[$j];
+                $f1[$j] = $tg;
+
+                $tg = $g1[$i];
+                $g1[$i] = $g1[$j];
+                $g1[$j] = $tg;
+            }
+        }
+    }
+    ?>
+    <table border="1">
+        <tr>
+            <td style="width:15%; text-align: center;">Name</td>
+            <td style="width:20%; text-align: center;">Type</td>
+            <td style="width:15%; text-align: center;">Size</td>
+            <td style="width:15%; text-align: center;">Tmp_type</td>
+            <td style="width:15%; text-align: center;">Last modified</td>
+            <td style="width:100px; text-align: center;">image</td>
+        </tr>
+        <?php
+        for ($i = 0; $i < $max; $i++) {
+            echo'<tr>';
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["name"]) . '</td>';
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["type"]) . "</td>";
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["size"]) . "B </td>";
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["tmp_name"]) . "</td>";
+            echo '<td style="text-align: center;">' . date("F d Y H:i:s.",filemtime("uploadLab4/".basename($_FILES["fileToUpload" . $g[$i]]["name"]))) . "</td>";
+            if ($imageFileType[$g[$i]] == "jpg" || $imageFileType[$g[$i]] == "png" || $imageFileType[$g[$i]] == "jpeg" || $imageFileType[$g[$i]] == "gif")
+                echo "<td text-align: center;><img src=" . $target_file_RG[$g[$i]] . "  width=\"100px\" height=\"100px\"></td>";
+
+            ?>
             </tr>
-            <?php
-            for ($i = 0; $i < $max; $i++) {
-                echo'<tr>';
-                echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["name"]) . '</td>';
-                echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["type"]) . "</td>";
-                echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["size"]) . "B </td>";
-                echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g[$i]]["tmp_name"]) . "</td>";
-                echo '<td style="text-align: center;">' . date("F d Y H:i:s.",filemtime("uploadLab4/".basename($_FILES["fileToUpload" . $g[$i]]["name"]))) . "</td>";
-                if ($imageFileType[$g[$i]] == "jpg" || $imageFileType[$g[$i]] == "png" || $imageFileType[$g[$i]] == "jpeg" || $imageFileType[$g[$i]] == "gif")
-                    echo "<td text-align: center;><img src=" . $target_file_RG[$g[$i]] . "  width=\"100px\" height=\"100px\"></td>";
-                
-                ?>
-                </tr>
-            <?php } ?>
-        </table>
+        <?php } ?>
+    </table>
+    <div class="center">
+        <h1>Sort by date modified</h1>
     </div>
+    <table border="1">
+        <tr>
+            <td style="width:15%; text-align: center;">Name</td>
+            <td style="width:20%; text-align: center;">Type</td>
+            <td style="width:15%; text-align: center;">Size</td>
+            <td style="width:15%; text-align: center;">Tmp_type</td>
+            <td style="width:15%; text-align: center;">Last modified</td>
+            <td style="width:100px; text-align: center;">image</td>
+        </tr>
+        <?php
+        for ($i = 0; $i < $max; $i++) {
+            echo'<tr>';
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g1[$i]]["name"]) . '</td>';
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g1[$i]]["type"]) . "</td>";
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g1[$i]]["size"]) . "B </td>";
+            echo '<td style="text-align: center;">' . basename($_FILES["fileToUpload" . $g1[$i]]["tmp_name"]) . "</td>";
+            echo '<td style="text-align: center;">' . date("F d Y H:i:s.",filemtime("uploadLab4/".basename($_FILES["fileToUpload" . $g1[$i]]["name"]))) . "</td>";
+            if ($imageFileType[$g1[$i]] == "jpg" || $imageFileType[$g1[$i]] == "png" || $imageFileType[$g1[$i]] == "jpeg" || $imageFileType[$g1[$i]] == "gif")
+                echo "<td text-align: center;><img src=" . $target_file_RG[$g1[$i]] . "  width=\"100px\" height=\"100px\"></td>";
+
+            ?>
+            </tr>
+        <?php } ?>
+    </table>
+</div>
 </div>
 </body>
 </html>
