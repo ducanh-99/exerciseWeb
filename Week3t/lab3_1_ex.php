@@ -19,28 +19,8 @@
             <div class="col-75" >
                 <select name ="day">
                     <?php 
-                        if($_GET["month"] == 2){
-                            if($_GET["year"] % 4== 0 && $_GET["year"] % 100 == 0 && $_GET["year"] % 400== 0 ){
-                                for($i = 1; $i < 30; $i++){
-                                    print("<option>$i</option>");
-                                }
-                            }
-                            else{
-                                for($i = 1; $i < 29; $i++){
-                                    print("<option>$i</option>");
-                                }
-                            }
-                        }
-                        else if($_GET["month"] == 4 ||$_GET["month"] == 6 ||$_GET["month"] == 9
-                            ||$_GET["month"] == 11){
-                                for($i = 1; $i < 31; $i++){
-                                    print("<option>$i</option>");
-                                }
-                            }
-                        else{
-                            for($i = 1; $i < 32; $i++){
-                                print("<option>$i</option>");
-                            }
+                         for($i = 1; $i < 32; $i++){
+                            print("<option>$i</option>");
                         }
 
                     ?>
@@ -111,27 +91,42 @@
                 $minute = $_GET["minute"];
                 $second = $_GET["second"];
                 $show = 1;
+                if($year % 400 ==0 &&  $month == 2 && $day >29){
+                        echo "Năm $year là năm nhuận<br/>";
+                        echo "Tháng $month năm $year có 29 ngày!<br/>";
+                    }
+                else if($year %4 ==0 && $year % 100 !=0 && $month == 2 && $day > 28){
+                        echo "Năm $year là năm nhuận<br/>";
+                        echo "Tháng $month năm $year có 29 ngày! <br/>";
+                }
+                else if($year %4 ==0 && $year %400!=0 && $year % 100 ==0 && $month == 2 && $day > 28){
+                            echo "Tháng $month năm $year có 28 ngày! <br/>";
+                    }
+                else if($year %4 !=0 && $month == 2 && $day > 28){
+                    echo "Tháng $month năm $year có 28 ngày! <br/>";
+
+                }
+                else if(($month == 4 ||$month == 6 ||$month == 9 ||$month == 11) && $day > 31){
+                        echo "Tháng $month có tối đa 30 ngày! <br/> ";
+                        
+                }
+            else if(($month == 1 ||$month == 3 ||$month == 5 ||$month == 7 ||$month == 8 ||
+            $month == 10 ||$month == 12 )&& $day > 31){
+                echo "Tháng $month có tối đa 31 ngày! <br/>";
+            }
+            else{
                 echo "Hello $name! <br/>";
                 echo "You have choose to have an appoitment on $hour:$minute:$second, $day/$month/$year <br/>";
                 echo "<br/>";
                 if($hour > 11){
                     $hour = $hour % 12;
                     echo "In 12 hour, the time and date is  $hour:$minute:$second, $day/$month/$year <br/>";
-                }else{
+                }
+                else
                     echo "In 12 hour, the time and date is  $hour:$minute:$second, $day/$month/$year <br/>";
-                }
-                if(($month == 4 ||$month == 6 ||$month == 9 ||$month == 11) && $day > 31){
-                        echo "Tháng $month có tối đa 30 ngày! <br/> ";
-                        
-                }
-                else if(($month == 1 ||$month == 3 ||$month == 5 ||$month == 7 ||$month == 8 ||
-                    $month == 10 ||$month == 12 )&& $day > 31){
-                    echo "Tháng $month có tối đa 31 ngày! <br/>";
-                }else if (($year % 400 == 0) || ($year % 4 ==0) && ($year % 100 != 0)){
-                    echo "Tháng $month có tối đa 29 ngày";
-                }else{
-                    echo "Tháng $month có tối đa 28 ngày";
-                }     
+
+                    
+            }
             }
         ?>
     </div>
