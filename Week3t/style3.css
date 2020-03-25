@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  form{
+    justify-content: space-around;
+  }
+  
+  input[type=text], input[type=number] {
+    width: 35px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  input[type=date]{
+    width: 30%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+  }
+  
+  .center{
+    text-align: center;
+    color: #58257b;
+    font-size: 15px;
+  }
+  
+  
+  select{
+    width: 70px;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit]{
+    background-color: #6b0c4f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 100px;
+  }
+  
+  button[type=button]{
+    background-color: #6b0c4f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 100px;
+  }
+  
+  input[type=reset]{
+    margin-left: 12px;
+    background-color: #6b0c4f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    width: 100px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+    width: 100px;
+  }
+  
+  input[type=reset]:hover {
+    background-color: #45a049;
+    width: 100px;
+  }
+  
+  button[type=button]:hover {
+    background-color: #45a049;
+    width: 100px;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  .col-45 {
+    float: left;
+    width: 45%;
+    margin-top: 6px;
+    padding-left: 30px;
+  }
+  .col-55 {
+    float: left;
+    width: 55%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  span{
+    padding: 12px;
+  }
+  .col-18{
+    margin-top: 18px;
+    padding: 12px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
