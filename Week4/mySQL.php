@@ -1,6 +1,6 @@
 <?php
 $username = "root"; // Khai báo username
-$password = "a123456A";      // Khai báo password
+$password = "";      // Khai báo password
 $server   = "localhost";   // Khai báo server
 $dbname   = "database";      // Khai báo database
 
