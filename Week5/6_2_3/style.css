@@ -1,82 +1,132 @@
 body {
-    font-family: 'Open Sans',Arial,sans-serif;
-    --theme-color: 77;
-    background-color: cyan;
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #f0f0f0;
 }
 
-header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    padding-top: 10px;
-    z-index: 1;
-    background-color: greenyellow;
+.nav{
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #be3144;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.4);
+    z-index: 10;
 }
 
 #navbar {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
-#navbar a {
-    margin: 4vw;
-    text-decoration: inherit;
-    color: black;
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
+nav{
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+  }
 
 main section {
     height: 100vh;
 }
+html{
+    font-size: 62.5%;
+}
 
 h1 {
-    margin-top: 35vh;
-    padding-top: 40px;
+    font-size: 6rem;
+    padding-top: 20px;
 }
 
 h2 {
     text-align: center;
     padding-top: 20px;
 }
-
-#welcome-section {  //welcome height
+p{
+    font-size: 3rem;
+}
+#welcome-section {  
+    /* //welcome height */
     min-height: 100px;
     text-align: center;
 }
+.nav-list {
+    display: flex;
+    margin-right: 2rem;
+  }
+@media (max-width: 28.75em) {
+    .nav {
+      justify-content: center;
+    }
+  
+    .nav-list {
+      margin: 0 1rem;
+    }
+  }
+  
 
-#projects {
-    background-color: fuchsia;
+  .nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+  }
+  
+  .nav-list a:hover {
+    background: #45a049;
+  }
+ #projects {
+    background-color: #45567d;
     padding-bottom: 20px;
     height: auto;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     max-width: 100%;
 }
+ #projects h2 {
+    padding-top: 80px;
+    margin-top: 30px;
+    border-bottom: 0.2rem solid white;
+    text-align: center;
+} 
 
-#projects h2 {
-    margin-bottom: 30px;
-}
 
 #projects-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 6vw;
-    grid-row-gap: 6vh;
-    max-width: 900px;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
     align-items: center;
-}
-
+    justify-items: center;
+  }
+.project-tile {
+    color: #303841;
+  }
+  
 #projects img {
+    display: block;
     width: 100%;
     height: 100%;
+    
 }
 
 #projects-content a {
@@ -87,13 +137,14 @@ h2 {
     text-align: center;
     border-style: solid;
     width: 300px;
-    height: 210px;
+    height: 300px;
+    font-size: 20px;
     text-decoration: none;
-    color: black;
+    color: rgb(245, 241, 241);
     border-width: 2px;
-    border-style: outset;
-    border-color: coral;
-    background-color: crimson;
+    /* border-style: outset;*/
+    border-color: #45567d ;
+    background-color: #303841;
 }
 
 #show-all {
@@ -142,6 +193,7 @@ h2 {
     margin-bottom: 0px;
 }
 #contacts p {
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
@@ -165,16 +217,16 @@ h2 {
 header, .main-section, footer {
     padding-left: 5px;
     padding-right: 5px;
-}
+}  
 
-footer {
+ footer {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
     background-color: deepskyblue;
-}
+} 
 
-@media(max-width: 700px) {
+ @media(max-width: 700px) {
     #projects-content a {
         width: 240px;
         height: 168px;
@@ -216,4 +268,4 @@ footer {
     #contacts {
         min-height: 500px;
     }
-}
+} 

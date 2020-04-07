@@ -1,6 +1,6 @@
 <?php
 $username = "root";
-$password = "a123456A";
+$password = "";
 $server   = "localhost";
 $dbname   = "database";
 $sold = $_REQUEST['sold'];

@@ -27,7 +27,7 @@ $result = $connect->query($sql);
 <body>
 <div>
     <h1>Products</h1>
-    <table>
+    <table border="1">
         <thead>
         <tr>
             <th>ProductID</th>

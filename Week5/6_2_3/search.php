@@ -31,8 +31,8 @@ $stmt->bind_result($result1,$result2,$result3,$result4,$result5);
 <body>
 <div>
     <h1>Products</h1>
-    <table>
-        <thead>
+    <table border="1">
+        <thead border="1">
         <tr>
             <th>ProductID</th>
             <th>Product_desc</th>
