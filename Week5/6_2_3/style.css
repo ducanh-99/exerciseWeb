@@ -95,8 +95,8 @@ h2 {
     color: black;
     border-width: 2px;
     border-style: outset;
-    border-color: coral;
-    background-color: crimson;
+    border-color: #f6eee8;
+    background-color :#f6eee8;
 }
 
 #show-all {
@@ -110,7 +110,7 @@ h2 {
     margin-top: 25px;
     text-align: center;
     color: black;
-    border-color: orangered;
+    border-color: #f6eee8;
     background-color: floralwhite;
 }
 
