@@ -39,7 +39,7 @@ nav{
 a {
     text-decoration: none;
     color: white;
-  }
+}
 
 main section {
     height: 100vh;
@@ -60,7 +60,7 @@ h2 {
 p{
     font-size: 3rem;
 }
-#welcome-section {  
+#welcome-section {
     /* //welcome height */
     min-height: 100px;
     text-align: center;
@@ -68,28 +68,28 @@ p{
 .nav-list {
     display: flex;
     margin-right: 2rem;
-  }
+}
 @media (max-width: 28.75em) {
     .nav {
-      justify-content: center;
+        justify-content: center;
     }
-  
-    .nav-list {
-      margin: 0 1rem;
-    }
-  }
-  
 
-  .nav-list a {
+    .nav-list {
+        margin: 0 1rem;
+    }
+}
+
+
+.nav-list a {
     display: block;
     font-size: 2.2rem;
     padding: 2rem;
-  }
-  
-  .nav-list a:hover {
+}
+
+.nav-list a:hover {
     background: #45a049;
-  }
- #projects {
+}
+#projects {
     background-color: #45567d;
     padding-bottom: 20px;
     height: auto;
@@ -99,17 +99,17 @@ p{
     align-items: center;
     max-width: 100%;
 }
- #projects h2 {
+#projects h2 {
     padding-top: 80px;
     margin-top: 30px;
     border-bottom: 0.2rem solid white;
     text-align: center;
-} 
+}
 
 
 #projects-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4rem;
     width: 100%;
     max-width: 1280px;
@@ -117,16 +117,16 @@ p{
     margin-bottom: 6rem;
     align-items: center;
     justify-items: center;
-  }
+}
 .project-tile {
     color: #303841;
-  }
-  
+}
+
 #projects img {
     display: block;
     width: 100%;
     height: 100%;
-    
+
 }
 
 #projects-content a {
@@ -217,16 +217,16 @@ p{
 header, .main-section, footer {
     padding-left: 5px;
     padding-right: 5px;
-}  
+}
 
- footer {
+footer {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
     background-color: deepskyblue;
-} 
+}
 
- @media(max-width: 700px) {
+@media(max-width: 700px) {
     #projects-content a {
         width: 240px;
         height: 168px;
@@ -274,4 +274,4 @@ header, .main-section, footer {
     #contacts {
         min-height: 500px;
     }
-} 
+}
