@@ -1,7 +1,7 @@
 body {
-    font-family: 'Open Sans',Arial,sans-serif;
+    font-family: 'iCiel Samsung Sharp Sans Bold', Arial, sans-serif;
     --theme-color: 77;
-    background-color:#f9fbf5;
+    background-color: cyan;
     margin: 0px;
     padding: 0px;
 }
@@ -11,18 +11,16 @@ header {
     top: 0px;
     left: 0px;
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
     z-index: 1;
-    background-color: #dad8c0;
+    background-color: greenyellow;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    text-align: center;
 }
 
 #navbar {
-    margin: 0 20px 30px 0;
-    font-size: 20px;
+    margin-right: 20px;
 }
 
 #navbar a {
@@ -38,7 +36,6 @@ main section {
 h1 {
     margin-top: 35vh;
     padding-top: 40px;
-    font-size: 80px;
 }
 
 h2 {
@@ -46,13 +43,13 @@ h2 {
     padding-top: 20px;
 }
 
-#welcome-section {  /*//welcome height*/
+#welcome-section {  //welcome height
     min-height: 100px;
     text-align: center;
 }
 
 #projects {
-    background-color: #e9e8d8;
+    background-color: fuchsia;
     padding-bottom: 20px;
     height: auto;
     display: flex;
@@ -67,10 +64,10 @@ h2 {
 
 #projects-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 6vw;
     grid-row-gap: 6vh;
-    max-width: 900px;
+    max-width: fit-content;
     margin-left: 20vw;
     margin-right: 20vw;
     justify-items: center;
@@ -95,8 +92,8 @@ h2 {
     color: black;
     border-width: 2px;
     border-style: outset;
-    border-color: #f6eee8;
-    background-color :#f6eee8;
+    border-color: coral;
+    background-color: crimson;
 }
 
 #show-all {
@@ -110,7 +107,7 @@ h2 {
     margin-top: 25px;
     text-align: center;
     color: black;
-    border-color: #f6eee8;
+    border-color: orangered;
     background-color: floralwhite;
 }
 
@@ -137,7 +134,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 180px;
+    min-height: 280px;
 }
 
 #contacts h2 {
@@ -174,7 +171,7 @@ footer {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
-    background-color:#dad8c0;
+    background-color: deepskyblue;
 }
 
 @media(max-width: 700px) {
@@ -200,7 +197,13 @@ footer {
     }
 }
 
-@media(max-width: 570px) {
+@media(max-width: 1245px) {
+    #projects-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 700px) {
     #projects-content {
         grid-template-columns: 1fr;
     }
