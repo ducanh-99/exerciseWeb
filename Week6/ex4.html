@@ -8,54 +8,110 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript">
-        function Validate(){
-            var res = "";
-            if(document.getElementById("inputName").value == ""){
-                res += "invalid name, ";
+    <style>
+        .center{
+            text-align: center;
+            color: #58257b;
+            font-size: 25px;
             }
-            var checkReg = new RegExp("[a-z0-9]@[a-z]");
-            if(!checkReg.test(document.getElementById("inputMail").value)){
-                res +="invaled gmail, ";    
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
             }
-            checkReg = new RegExp("^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$");
-            if(!checkReg.test(document.getElementById("inputPhone").value)){
-                res += "invaled phone number.";
-            }
-            if(res[res.length - 2] == ","){
-                res = res.slice(0, res.length - 2);
-                res += ".";
-            }
-            if(res == ""){
-                alert("valid all.");
-            }else{
-                alert(res);
-            }
-        }
-    </script>
+    </style>
   </head>
-  <body>
+  <body >
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-    <form action="" class="container">
-        <div class="form-group">
-            <label for="inputName">Name</label>
-            <input type="text" class="form-control" id="inputName" aria-describedby="Name" placeholder="Enter name">    
-        </div>
-        <div class="form-group">
-            <label for="inputMail">Email address</label>
-            <input type="email" class="form-control" id="inputMail" aria-describedby="emailHelp" placeholder="Enter email">    
-        </div>
-        <div class="form-group">
-            <label for="inputPhone">Phone numbers</label>
-            <input type="text" class="form-control" id="inputPhone" aria-describedby="Phone" placeholder="Enter phone">    
-        </div>
-        <input type="button" class="btn btn-primary" value="Submit" onClick ="Validate()">
-    </form>
-  </body>
+    <div style="margin: 0px 500px 0px 500px">
+        <form action="" onsubmit="return validation()" class="container">
+            <div class="center">
+                <h1>Validation</h1>
+            </div>
+            <div class="form-group">
+                <label for="inputName">Username</label>
+                <input type="text" class="form-control" id="user" aria-describedby="Username" placeholder="Enter username">
+                <span id = "username" class="text-danger font-weight-boder"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="Password" placeholder="Enter password">
+                <span id = "sp_password" class="text-danger font-weight-boder"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword_confirm">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm_password" aria-describedby="ConfirmPassword" placeholder="Enter confirm password">
+                <span id = "sp_confirm" class="text-danger font-weight-boder"></span>
+            </div>
+            <div class="form-group">
+                <label for="inputMail">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">  
+                <span id = "sp_email" class="text-danger font-weight-boder"></span>  
+            </div>
+            <div class="form-group">
+                <label for="inputPhone">Phone numbers</label>
+                <input type="text" class="form-control" id="phone" aria-describedby="Phone" placeholder="Enter phone">   
+                <span id = "sp_phone" class="text-danger font-weight-boder"></span> 
+            </div>
+            <input type="submit" class="btn btn-primary" value="Submit" >
+        </form>
+    </div>
+    </body>
+    <script type="text/javascript">
+    function validation(){
+        var user = document.getElementById('user').value;
+        var password = document.getElementById('password').value;
+        var confirm_password = document.getElementById('confirm_password').value;
+        var email = document.getElementById('email').value;
+        var phone = document.getElementById('phone').value;
+        if(user==""){
+            document.getElementById('username').innerHTML="* Please fill the username field";
+            return false;
+        }
+        if((user.length<6) || (user.length)>20){
+            document.getElementById('username').innerHTML="* User lenght must be between 6 and 20";
+        }
+
+        if(password==""){
+            document.getElementById('sp_password').innerHTML="* Please fill the password field";
+            return false;
+        }
+        if((password.length<8) || (user.length)>20){
+            document.getElementById('sp_password').innerHTML="* Password lenght must be between 8 and 20";
+        }
+        if(confirm_password==""){
+            document.getElementById('sp_confirm').innerHTML="* Please fill the confirm field";
+            return false;
+        }
+        if(password != confirm_password){
+            document.getElementById('sp_confirm').innerHTML="* The two passwords do not match";
+            return false;
+        }
+        if(email==""){
+            document.getElementById('sp_email').innerHTML="* Please fill the email field";
+            return false;
+        }
+        var checkReg = new RegExp("[a-z0-9]@[a-z]");
+        if(!checkReg.test(email)){
+            document.getElementById('sp_email').innerHTML="* Enter incorrect email information";
+            return false;   
+        }
+        if(phone==""){
+            document.getElementById('sp_phone').innerHTML="* Please fill the phone field";
+            return false;
+        }
+        var checkReg = new RegExp("^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$");
+        if(!checkReg.test(phone)){
+            document.getElementById('sp_phone').innerHTML="* invaled phone number.";
+            return false;
+        }
+        alert("Success");
+        return true;   
+    }  
+</script>
 </html>
