@@ -33,3 +33,4 @@ class TypesOfFood extends React.Component {
         );
     }
 };
+// dùng thẻ <Citrus> và <NonCitrus>

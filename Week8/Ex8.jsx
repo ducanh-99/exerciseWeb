@@ -13,3 +13,4 @@ class MyComponent extends React.Component {
         // change code above this line
     }
 };
+// super để gọi lại constructor của class cha, trong trường hợp này là React.Component

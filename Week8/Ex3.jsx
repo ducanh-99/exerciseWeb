@@ -5,3 +5,4 @@ const JSX = (
         {/*This is a comment*/}
     </div>
 );
+//Comment trong JSX

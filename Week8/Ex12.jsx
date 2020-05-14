@@ -17,3 +17,4 @@ class TypesOfFood extends React.Component {
 
 // change code below this line
 ReactDOM.render(<TypesOfFood/>, document.getElementById('challenge-node'));
+//Truyền thẻ TypesofFood vào reactdom

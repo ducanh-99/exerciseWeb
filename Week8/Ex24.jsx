@@ -22,4 +22,5 @@ class MyComponent extends React.Component {
       );
     }
   };
+  // tránh undifed JS
   

@@ -11,3 +11,7 @@ const ShoppingCart = (props) => {
 ShoppingCart.defaultProps = {
     items: 0
 }
+// gán mặc định trong react
+// ShoppingCart.defaultProps = {
+//     items: 0
+// }

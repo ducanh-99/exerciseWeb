@@ -39,3 +39,4 @@ class Counter extends React.Component {
     }
   };
   
+  // viết phương khởi tạo state

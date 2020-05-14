@@ -15,4 +15,4 @@ class MyComponent extends React.Component {
       );
     }
   };
-  
+// dùng thành phần name trong state 

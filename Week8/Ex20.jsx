@@ -26,3 +26,4 @@ Camper.propTypes = {
 Camper.defaultProps = {
     name: 'CamperBot'
 };
+// Camper là 1 chuỗi, thành phần bắt buộc của hàm

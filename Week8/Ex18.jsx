@@ -20,3 +20,4 @@ class ShoppingCart extends React.Component {
         return <Items />
     }
 };
+// PropTypes.number.isRequired kiểm tra quantity là thuộc tính bắt buộc cho thành phầm Items

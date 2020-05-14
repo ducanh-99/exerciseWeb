@@ -8,3 +8,4 @@ const JSX =
             <li>li3 tag</li>
         </ul>
     </div>;
+// trả về 1 phần tử duy nhất, nên các trường hợp không đặt trong 1 khối cha thì ko hợp lý ( dùng thẻ div )

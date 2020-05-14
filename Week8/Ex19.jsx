@@ -33,3 +33,4 @@ class ResetPassword extends React.Component {
         );
     }
 };
+// dùng this để đề cập một thành phần lớp trong chính nó

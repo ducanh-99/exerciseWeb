@@ -18,4 +18,4 @@ class MyComponent extends React.Component {
       );
     }
   };
-  
+  // khai báo biến name = this.state.nam

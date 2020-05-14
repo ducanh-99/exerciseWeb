@@ -22,3 +22,5 @@ class ToDo extends React.Component {
         );
     }
 };
+// sử dụng join đối với mảng truyền vào
+//Join tạo ra một chuỗi mới bằng cách liên kết các phần tử trong mảng

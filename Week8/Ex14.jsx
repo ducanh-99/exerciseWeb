@@ -24,3 +24,4 @@ class Calendar extends React.Component {
         );
     }
 };
+//truyền thuộc tính date vào hàm Current Date

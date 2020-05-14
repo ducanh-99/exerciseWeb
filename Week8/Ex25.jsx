@@ -24,4 +24,6 @@ class MyComponent extends React.Component {
       );
     }
   };
-  
+ // dùng bind và bắt sự kiện cho button
+ //Trong Class Components của React, khi bạn truyền vào một callback, nó có thể mất đi context của nó.
+ // Hay khi sự kiện diễn ra, hàm được gọi, giá trị của this sẽ trở về default binding 

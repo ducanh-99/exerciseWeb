@@ -14,4 +14,6 @@ class StatefulComponent extends React.Component {
       );
     }
   };
-  
+//state trong React
+// khai báo thành phần name trong state
+// state được sử dụng trong suốt một vòng đời

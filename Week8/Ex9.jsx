@@ -22,3 +22,4 @@ class ParentComponent extends React.Component {
         );
     }
 };
+//sử dụng component trong JSX

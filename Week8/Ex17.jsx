@@ -16,3 +16,4 @@ class ShoppingCart extends React.Component {
         { /* change code above this line */ }
     }
 };
+// ghi đè giá trị trong react, quantity=0 thành 10

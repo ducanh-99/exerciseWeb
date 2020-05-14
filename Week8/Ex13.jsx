@@ -15,3 +15,4 @@ class MyComponent extends React.Component {
 };
 ReactDOM.render(<MyComponent/>, document.getElementById('challenge-node'));
 //There is a div with id='challenge-node' available for you to use.
+// Tự viết hàm JSX và dùng ReactDom

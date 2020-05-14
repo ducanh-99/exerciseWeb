@@ -38,3 +38,4 @@ class TypesOfFood extends React.Component {
         );
     }
 };
+// Lồng thẻ trong JSX
